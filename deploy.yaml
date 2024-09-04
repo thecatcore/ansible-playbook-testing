@@ -1,6 +1,9 @@
 - name: "Apache Installation"
   hosts: prod
   tasks:
+    - name: "Install dependencies"
+      ansible.builtin.yum:
+        name: python-requests
     - name: "Create container"
       community.docker.docker_container:
         name: webapp
