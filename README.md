@@ -3,8 +3,14 @@
 ## Installing dependencies
 
 ### Packages (Centos)
-`sudo yum install epel-release -y && sudo yum install ansible ansible-lint nano -y`
+```bash
+sudo yum install epel-release -y && sudo yum install ansible ansible-lint nano -y
+```
 ### Ansible collections
-`ansible-galaxy collection install -r requirements.yml`
+```bash
+ansible-galaxy collection install -r requirements.yml
+```
 ## Launching
-`ansible-playbook -i prod.yaml deploy.yaml`
+```bash
+ansible-playbook -i prod.yaml deploy.yaml
+```
