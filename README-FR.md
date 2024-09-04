@@ -1,5 +1,4 @@
 # ansible-playbook-testing
-Small example on how to use ansible to deploy an apache image to a client.
 Exemple de projet ansible qui déploie une image apache sur un client
 
 ## Installation des dépendences
