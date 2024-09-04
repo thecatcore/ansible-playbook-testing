@@ -14,5 +14,5 @@ ansible-galaxy collection install -r requirements.yml
 ```
 ## Lancer
 ```bash
-ansible-playbook -i prod.yaml deploy.yaml
+ansible-playbook -i prod.yml deploy.yml
 ```
