@@ -1,6 +1,7 @@
 - name: "Apache Installation"
   hosts: prod
   become: true
+  become_user: admin
   tasks:
     - name: "Install dependencies"
       ansible.builtin.yum:
