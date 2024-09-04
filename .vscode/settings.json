@@ -1,0 +1,7 @@
+{
+    "ansible.python.interpreterPath": "/usr/bin/python3",
+    "yaml.schemas": {
+        "https://raw.githubusercontent.com/ansible/ansible-lint/main/src/ansiblelint/schemas/ansible.json#/$defs/playbook": "file:///home/arthur/Dev/Simplon/CDA/ansible-playbook-testing/deploy.yaml",
+        "https://raw.githubusercontent.com/ansible/ansible-lint/main/src/ansiblelint/schemas/inventory.json": "file:///home/arthur/Dev/Simplon/CDA/ansible-playbook-testing/prod.yaml"
+    }
+}
