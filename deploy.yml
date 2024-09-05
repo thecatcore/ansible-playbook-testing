@@ -37,6 +37,7 @@
   hosts: prod
   become: true
   vars:
+     ansible_sudo_pass: admin
   pre_tasks:
     - name: Install EPEL repo
       package: name=epel-release state=present
