@@ -6,4 +6,4 @@ all:
 prod:
   hosts:
     client:
-      ansible_host: 10.0.138.5
+      ansible_host: 10.0.175.5
