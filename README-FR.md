@@ -7,11 +7,6 @@ Exemple de projet ansible qui déploie une image apache sur un client
 ```bash
 sudo yum install epel-release -y && sudo yum install ansible ansible-lint nano -y
 ```
-### Ansible collections
-Une fois le projet cloné, se placer dedans et éxectuer la commande.
-```bash
-ansible-galaxy collection install -r requirements.yml
-```
 ## Lancer
 ```bash
 ansible-playbook -i prod.yml deploy.yml
