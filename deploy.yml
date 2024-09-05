@@ -1,16 +1,33 @@
 ---
-- name: "Apache Installation"
+# - name: "Apache Installation"
+#   hosts: prod
+#   become: true
+#   vars:
+#     ansible_sudo_pass: admin
+#   tasks:
+#     - name: "Install dependencies"
+#       ansible.builtin.yum:
+#         name: python-requests
+#     - name: "Create container"
+#       community.docker.docker_container:
+#         name: webapp
+#         image: httpd
+#         ports:
+#           - "80:80"
+- name: "Apache installation using docker"
   hosts: prod
-  become: true
   vars:
-    ansible_sudo_pass: admin
-  tasks:
-    - name: "Install dependencies"
-      ansible.builtin.yum:
-        name: python-requests
-    - name: "Create container"
-      community.docker.docker_container:
-        name: webapp
-        image: httpd
-        ports:
-          - "80:80"
+     ansible_sudo_pass: admin
+  pre_tasks:
+  - name: Install python-pip state=present update_cache=yes
+    yum: name-python-pip
+
+  - name: Install docker python
+    pip: name-docker-pip
+    tasks:
+  - name: Create apache container
+    docker_container:
+       name: webapp
+       image: httpd
+       ports:
+            -"80:80"
