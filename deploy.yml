@@ -66,38 +66,14 @@
 
   pre_tasks:
     - name: Install EPEL repo
-      package:
-        name: epel-release
-        state: present
+      package: name=epel-release state=present
       when: ansible_distribution == "CentOS"
 
     - name: Install python-pip
-      yum:
-        name: python-pip
-        state: present
-        update_cache: yes
-    
-    - name: Update pip
-      pip:
-        name: pip
-        state: latest
+      yum: name=python-pip state=present update_cache=yes
 
-    - name: Install docker Python library
-      pip:
-        name: docker
-        state: present
-
-    - name: Ensure Docker is installed
-      yum:
-        name: docker
-        state: present
-        update_cache: yes
-
-    - name: Start Docker service
-      service:
-        name: docker
-        state: started
-        enabled: yes
+    - name: Install docker python
+      pip: name=docker-py
 
   tasks:
     - name: Create Apache container
