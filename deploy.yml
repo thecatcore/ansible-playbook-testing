@@ -48,6 +48,11 @@
 
     - name: Install docker python
       pip: name=docker-py
+    - name: Creates directory
+      file:
+        path: /home/admin/site
+        state: directory
+
   tasks:
     - name: Copy website file template
       template:
